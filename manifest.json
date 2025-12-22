@@ -1,0 +1,21 @@
+{
+  "manifestVersion": 1,
+  "minecraftVersion": "1.20.1",
+  "name": "Kirbfinity",
+  "version": "1.0.0",
+  "author": "kirballs",
+  "description": "Kirbfinity modpack for Minecraft Forge",
+  "files": [],
+  "overrides": "overrides",
+  "projectID": 0,
+  "fileID": 0,
+  "minecraft": {
+    "version": "1.20.1",
+    "modLoaders": [
+      {
+        "id": "forge-46.0.1",
+        "primary": true
+      }
+    ]
+  }
+}
