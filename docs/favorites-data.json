@@ -1,0 +1,26 @@
+{
+  "metadata": {
+    "username": "kirbskyer",
+    "modpack_version": "1.20.1",
+    "forge_version": "47.4.5",
+    "last_updated": "2026-01-03"
+  },
+  "favorites": [
+    {
+      "name": "Example Mod",
+      "url": "https://www.curseforge.com/minecraft/mc-mods/example-mod",
+      "description": "An example mod for demonstration",
+      "game_versions": ["1.20.1", "1.20", "1.19.4"],
+      "mod_type": "mod",
+      "categories": ["decoration", "building"]
+    },
+    {
+      "name": "Example Resource Pack",
+      "url": "https://www.curseforge.com/minecraft/texture-packs/example-pack",
+      "description": "An example resource pack",
+      "game_versions": ["1.20.1"],
+      "mod_type": "resourcepack",
+      "categories": []
+    }
+  ]
+}
