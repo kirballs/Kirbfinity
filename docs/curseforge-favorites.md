@@ -11,7 +11,7 @@
 
 ## Compatible Mods (1.20.1 Forge)
 
-*1 mods compatible with the target version*
+*1 mod compatible with the target version*
 
 ### Decoration
 

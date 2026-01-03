@@ -42,7 +42,13 @@ class ModInfo:
     
     def is_compatible_version(self) -> bool:
         """Check if mod is compatible with 1.20.1"""
-        return any('1.20.1' in version for version in self.game_versions)
+        if not self.game_versions:
+            return False
+        for version in self.game_versions:
+            # Check for exact match or broader 1.20.x versions
+            if '1.20.1' in version or version.startswith('1.20.') or version == '1.20':
+                return True
+        return False
     
     def is_resource_pack(self) -> bool:
         """Check if this is a resource pack"""
@@ -155,7 +161,9 @@ class FavoritesCategorizer:
         
         # Output compatible mods by category
         output.append("## Compatible Mods (1.20.1 Forge)\n\n")
-        output.append(f"*{len(compatible_mods)} mods compatible with the target version*\n\n")
+        mod_count = len(compatible_mods)
+        mod_word = "mod" if mod_count == 1 else "mods"
+        output.append(f"*{mod_count} {mod_word} compatible with the target version*\n\n")
         
         for category in sorted(categorized.keys()):
             output.append(f"### {category}\n\n")

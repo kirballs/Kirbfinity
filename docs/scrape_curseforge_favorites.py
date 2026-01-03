@@ -33,7 +33,13 @@ class ModInfo:
     
     def is_compatible_version(self) -> bool:
         """Check if mod is compatible with 1.20.1"""
-        return any('1.20.1' in version for version in self.game_versions)
+        if not self.game_versions:
+            return False
+        for version in self.game_versions:
+            # Check for exact match or broader 1.20.x versions
+            if '1.20.1' in version or version.startswith('1.20.') or version == '1.20':
+                return True
+        return False
     
     def is_resource_pack(self) -> bool:
         """Check if this is a resource pack"""

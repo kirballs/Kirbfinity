@@ -98,10 +98,15 @@
       const game_versions = [];
       if (versionElement) {
         const versionText = versionElement.textContent;
-        // Try to extract version numbers
+        // Try to extract version numbers that are 1.20 or compatible
         const versionMatches = versionText.match(/1\.\d+(\.\d+)?/g);
         if (versionMatches) {
-          game_versions.push(...versionMatches);
+          // Filter to keep only 1.20+ versions for better relevance
+          const filteredVersions = versionMatches.filter(v => {
+            const [major, minor] = v.split('.').map(Number);
+            return major === 1 && minor >= 20;
+          });
+          game_versions.push(...(filteredVersions.length > 0 ? filteredVersions : versionMatches));
         }
       }
       
